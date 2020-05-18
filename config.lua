@@ -4,4 +4,4 @@
 
  ----- Config Options -----
  AFK_KICK_TIME = 5 -- Minutes
- AFK_KICK_MESSAGE = "You were kicked for inactivity."
+ AFK_KICK_MESSAGE = "You were kicked for inactivity 😓"
