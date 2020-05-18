@@ -1,0 +1,11 @@
+{
+  "author": "Philip-J.Fry",
+  "version": "1.0",
+  "client_scripts": [
+    "c_afk_kick.lua"
+  ],
+  "server_scripts": [
+    "s_afk_kick.lua",
+    "config.lua"
+  ]
+}
