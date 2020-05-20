@@ -1,16 +1,20 @@
- -- Made with 🖤 By Philip-J.Fry
- -- https://github.com/fribblet56
- -- https://discord.gg/MDEwtKr
+-- Made with 🖤 By Philip-J.Fry
+-- https://github.com/fribblet56
+-- https://discord.gg/MDEwtKr
 
-local key_list = {}
-
-CreateTimer(function()
-    if #key_list == 0 then return end
-    key_list = {}
-    CallRemoteEvent("afk:update")
-end, 1000)
-
+local delay = 0
+local last_key_press = GetTimeSeconds()
 
 AddEvent("OnKeyPress", function(key)
-    table.insert(key_list, key)
+    last_key_press = GetTimeSeconds()
+end)
+
+CreateTimer(function()      
+    if GetTimeSeconds() - last_key_press > delay*60 then
+        CallRemoteEvent("afk:kick")
+    end 
+end, 2000)
+
+AddRemoteEvent("afk:setup", function(_delay)
+    delay = _delay
 end)
